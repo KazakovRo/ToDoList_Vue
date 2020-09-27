@@ -1,6 +1,9 @@
 <template>
   <section id="to-do-app">
     <h1>Brilliant To do list</h1>
+    <AddTask 
+      @add-task="addTask"
+    />
     <hr />
     <ToDoList 
       v-bind:todos="todos"
@@ -11,10 +14,12 @@
 
 <script>
 import ToDoList from "@/components/ToDoList/ToDoList";
+import AddTask from '@/components/AddTask/AddTask';
 
 export default {
   components: {
     ToDoList,
+    AddTask
   },
   data() {
     return {
@@ -25,22 +30,15 @@ export default {
         { id: 2,
           taskText: "task text 2",
           complete: false },
-        {
-          id: 3,
-          taskText: "task text 3",
-          complete: false,
-        },
-        {
-          id: 4,
-          taskText: "task text 4",
-          complete: false,
-        },
       ],
     };
   },
   methods: {
     removeTask(id) {
       this.todos = this.todos.filter(task => task.id !== id)
+    },
+    addTask(task) {
+      this.todos.push(task)
     }
   }
 }
