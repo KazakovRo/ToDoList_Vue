@@ -1,0 +1,19 @@
+@import './variables';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+}
+
+  button {
+    transition: all $trans;
+    cursor: pointer;
+  }
+
