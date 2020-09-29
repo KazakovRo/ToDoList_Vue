@@ -20,7 +20,8 @@ export default {
         const newTask = {
           id: uuid.v4(),
           taskText: this.inputText,
-          complete: false
+          complete: false,
+          editing: false
         }
 
         this.$emit('add-task', newTask)
@@ -30,4 +31,8 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import './AddTask.module.scss'
+</style>
 

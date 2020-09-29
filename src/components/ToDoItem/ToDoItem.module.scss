@@ -6,7 +6,7 @@ li {
 
   list-style-type: none;
   width: 400px;
-  margin: 5px;
+  margin: 7px;
   border: 1px solid $color-red;
   border-radius: 4px;
 
@@ -21,6 +21,10 @@ span {
 
 input {
   margin: 7px;
+}
+
+button {
+  margin: 0 4px;
 }
 
 .done {

@@ -4,7 +4,10 @@
       <input type="checkbox" v-on:change="task.complete = !task.complete" />
       {{ task.taskText }}
     </span>
-    <button v-on:click="$emit('remove-task', task.id)">&times;</button>
+    <span>
+      <button v-on:click="$emit('edit-task', task.taskText)">✏️</button>
+      <button v-on:click="$emit('remove-task', task.id)">❌</button>
+    </span>
   </li>
 </template>
 

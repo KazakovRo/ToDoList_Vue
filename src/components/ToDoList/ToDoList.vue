@@ -6,6 +6,7 @@
         v-bind:task="task"
         v-bind:key="index"
         v-on:remove-task="removeTask"
+        v-on:edit-task="editTask"
       />
     </ul>
   </div>
@@ -22,8 +23,15 @@ export default {
   methods: {
     removeTask(id) {
       this.$emit('remove-task', id)
+    },
+
+    editTask(txt) {
+      this.$emit('edit-task', txt)
     }
   }
 };
 </script>
 
+<style lang="scss" scoped>
+@import './ToDoList.module.scss'
+</style>

@@ -1,0 +1,29 @@
+
+@import '../scss/variables';
+
+#about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  text-align: center;
+  width: 700px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+
+  margin: 2px 0 6px;
+
+  > a {
+    font-size: 20px;
+    text-decoration: none;
+    padding: 2px 9px;
+    border: 2px solid $color-bg-home;
+    color: $color-bg-home;
+  }
+}
