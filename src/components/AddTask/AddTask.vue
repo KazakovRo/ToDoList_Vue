@@ -1,38 +1,39 @@
 <template>
-  <form @submit.prevent="addTask">
-    <input type="text" v-model="inputText">
-    <button type="submit">Add task</button>
-  </form>
+  <div class="add-task">
+    <input type="text" v-model="inputText" />
+    <button type="submit" @click="addTask">Add task</button>
+  </div>
 </template>
 
 <script>
-import {uuid} from "vue-uuid";
+import { uuid } from "vue-uuid";
 
 export default {
+  props: ["todos"],
   data() {
-    return{
-      inputText: ''
-    }
+    return {
+      inputText: "",
+    };
   },
   methods: {
     addTask() {
-      if (this.inputText.trim()) {
+      if (this.inputText.trim().length) {
         const newTask = {
           id: uuid.v4(),
           taskText: this.inputText,
           complete: false,
-          editing: false
-        }
+          editing: false,
+        };
 
-        this.$emit('add-task', newTask)
-        this.inputText = ''
+        this.todos.push(newTask);
+        this.inputText = "";
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import './AddTask.module.scss'
+@import "./AddTask.module.scss";
 </style>
 

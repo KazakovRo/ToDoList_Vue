@@ -3,10 +3,9 @@
     <ul>
       <ToDoItem
         v-for="(task, index) of todos"
-        v-bind:task="task"
-        v-bind:key="index"
-        v-on:remove-task="removeTask"
-        v-on:edit-task="editTask"
+        :key="index"
+        :task="task"
+        @remove-task="removeTask"
       />
     </ul>
   </div>
@@ -21,17 +20,13 @@ export default {
     ToDoItem,
   },
   methods: {
-    removeTask(id) {
-      this.$emit('remove-task', id)
+    removeTask(taskId) {
+      this.$emit("remove-task", taskId);
     },
-
-    editTask(txt) {
-      this.$emit('edit-task', txt)
-    }
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import './ToDoList.module.scss'
+@import "./ToDoList.module.scss";
 </style>
